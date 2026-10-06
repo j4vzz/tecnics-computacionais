@@ -5,7 +5,7 @@
 :root {
     --cor-fundo: #20588a;
     --cor-principal: #1a4670;
-    --cor-secundaria: #1e2035;
+    --cor-secundaria: #133c5e;
     --cor-destaque: #74a1a9;
     --cor-destaque-hover: #9bd5df;
     --cor-texto: #D7F9FF;
@@ -56,7 +56,7 @@ body {
     border-radius: 20px;
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.5),
+        0 15px 40px rgba(39, 60, 99, 0.5),
         0 0 30px rgba(116, 161, 169, 0.08);
 }
 
@@ -153,7 +153,7 @@ h1 {
     transform: translateY(-3px);
 
     box-shadow:
-        0 8px 20px rgba(116, 161, 169, 0.25);
+        0 8px 20px rgba(65, 91, 95, 0.25);
 }
 
 .caixa-alternativas button:active {
