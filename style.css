@@ -4,12 +4,12 @@
 
 :root {
     --cor-fundo: #20588a;
-    --cor-principal: #528896;
-    --cor-secundaria: #30334a;
+    --cor-principal: #1a4670;
+    --cor-secundaria: #1e2035;
     --cor-destaque: #74a1a9;
     --cor-destaque-hover: #9bd5df;
     --cor-texto: #D7F9FF;
-    --cor-preto: #01080E;
+    --cor-preto: #24537c;
 }
 
 * {
@@ -34,7 +34,7 @@ body {
     background:
         radial-gradient(
             circle at top,
-            #1c3440 0%,
+            #3b85aa 0%,
             var(--cor-fundo) 55%
         );
 }
