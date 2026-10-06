@@ -1,28 +1,235 @@
-:root{
-  --cor-fundo: #01080E;
-  --cor-principal: #101220;
-  --cor-secundaria: #30334a;
-  --cor-destaque: #74a1a9;
-  --cor-texto: #D7F9FF;
+:root {
+    --cor-fundo: #01080E;
+    --cor-principal: #101220;
+    --cor-secundaria: #30334a;
+    --cor-destaque: #74a1a9;
+    --cor-texto: #D7F9FF;
+    --cor-hover: #8fcbd4;
+    --cor-branco: #ffffff;
 }
+
+/* Reset básico */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Página */
 
 body {
-  background-color: #212333;
-  color: #9cb8bd;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        var(--cor-fundo),
+        #111827,
+        #212333
+    );
+
+    color: var(--cor-texto);
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+
+    padding: 20px;
 }
 
-.caixa-principal{
-  background-color: var(--cor-principal);
-  width: 90%;
-  max-width: 600px;
-  text-align: center;
-  padding: 20px;
+/* Caixa principal */
+
+.caixa-principal {
+    background-color: var(--cor-principal);
+
+    width: 90%;
+    max-width: 700px;
+
+    padding: 35px;
+
+    text-align: center;
+
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 20px;
+
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 
-h1{
-  color: var(--cor-destaque);
+/* Título */
+
+h1 {
+    color: var(--cor-destaque);
+
+    font-size: 2.2rem;
+
+    margin-bottom: 30px;
+
+    text-shadow: 0 0 15px rgba(116, 161, 169, 0.3);
+}
+
+/* Pergunta */
+
+.caixa-perguntas {
+    background-color: var(--cor-secundaria);
+
+    color: var(--cor-texto);
+
+    padding: 25px;
+
+    margin-bottom: 25px;
+
+    border-radius: 12px;
+
+    font-size: 1.1rem;
+
+    line-height: 1.6;
+
+    text-align: left;
+}
+
+/* Alternativas */
+
+.caixa-alternativas {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+/* Botões */
+
+.caixa-alternativas button {
+    background-color: transparent;
+
+    color: var(--cor-texto);
+
+    border: 2px solid var(--cor-destaque);
+
+    border-radius: 10px;
+
+    padding: 16px 20px;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    transition: all 0.25s ease;
+}
+
+/* Efeito quando passa o mouse */
+
+.caixa-alternativas button:hover {
+    background-color: var(--cor-destaque);
+
+    color: var(--cor-fundo);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 20px rgba(116, 161, 169, 0.25);
+}
+
+/* Efeito ao clicar */
+
+.caixa-alternativas button:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+/* Resultado */
+
+.caixa-resultado {
+    display: none;
+
+    margin-top: 25px;
+
+    padding: 25px;
+
+    background-color: var(--cor-secundaria);
+
+    border: 1px solid var(--cor-destaque);
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    line-height: 1.6;
+}
+
+/* Título do resultado */
+
+.texto-resultado h2 {
+    color: var(--cor-destaque);
+
+    margin-bottom: 15px;
+
+    text-align: center;
+}
+
+/* Subtítulo do resultado */
+
+.texto-resultado h3 {
+    color: var(--cor-hover);
+
+    margin-top: 20px;
+
+    margin-bottom: 10px;
+}
+
+/* Parágrafos do resultado */
+
+.texto-resultado p {
+    color: var(--cor-texto);
+
+    margin-bottom: 12px;
+}
+
+/* Texto em destaque */
+
+.texto-resultado strong {
+    color: var(--cor-destaque);
+}
+
+/* Responsividade para celular */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .caixa-principal {
+        width: 100%;
+
+        padding: 25px 18px;
+
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+
+        margin-bottom: 20px;
+    }
+
+    .caixa-perguntas {
+        padding: 18px;
+
+        font-size: 1rem;
+    }
+
+    .caixa-alternativas button {
+        padding: 14px;
+
+        font-size: 0.95rem;
+    }
+
+    .caixa-resultado {
+        padding: 18px;
+    }
 }
