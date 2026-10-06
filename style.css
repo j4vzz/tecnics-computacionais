@@ -1,14 +1,16 @@
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
 :root {
     --cor-fundo: #01080E;
     --cor-principal: #101220;
     --cor-secundaria: #30334a;
     --cor-destaque: #74a1a9;
+    --cor-destaque-hover: #9bd5df;
     --cor-texto: #D7F9FF;
-    --cor-hover: #8fcbd4;
-    --cor-branco: #ffffff;
+    --cor-preto: #01080E;
 }
-
-/* Reset básico */
 
 * {
     margin: 0;
@@ -16,138 +18,157 @@
     box-sizing: border-box;
 }
 
-/* Página */
-
 body {
-    background: linear-gradient(
-        135deg,
-        var(--cor-fundo),
-        #111827,
-        #212333
-    );
-
-    color: var(--cor-texto);
-
-    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    min-height: 100vh;
-
     padding: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: var(--cor-texto);
+
+    background:
+        radial-gradient(
+            circle at top,
+            #1c3440 0%,
+            var(--cor-fundo) 55%
+        );
 }
 
-/* Caixa principal */
+
+/* =========================
+   CAIXA PRINCIPAL
+========================= */
 
 .caixa-principal {
-    background-color: var(--cor-principal);
-
-    width: 90%;
-    max-width: 700px;
+    width: 100%;
+    max-width: 750px;
 
     padding: 35px;
 
-    text-align: center;
+    background-color: var(--cor-principal);
 
     border: 1px solid var(--cor-secundaria);
     border-radius: 20px;
 
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(116, 161, 169, 0.08);
 }
 
-/* Título */
+
+/* =========================
+   TÍTULO
+========================= */
 
 h1 {
+    margin-bottom: 30px;
+
     color: var(--cor-destaque);
+
+    text-align: center;
 
     font-size: 2.2rem;
 
-    margin-bottom: 30px;
-
-    text-shadow: 0 0 15px rgba(116, 161, 169, 0.3);
+    text-shadow:
+        0 0 15px rgba(116, 161, 169, 0.35);
 }
 
-/* Pergunta */
+
+/* =========================
+   PERGUNTAS
+========================= */
 
 .caixa-perguntas {
-    background-color: var(--cor-secundaria);
+    min-height: 130px;
 
-    color: var(--cor-texto);
-
-    padding: 25px;
+    display: flex;
+    align-items: center;
 
     margin-bottom: 25px;
+    padding: 25px;
+
+    background-color: var(--cor-secundaria);
 
     border-radius: 12px;
 
+    color: var(--cor-texto);
+
     font-size: 1.1rem;
-
     line-height: 1.6;
-
-    text-align: left;
 }
 
-/* Alternativas */
+
+/* =========================
+   ALTERNATIVAS
+========================= */
 
 .caixa-alternativas {
     display: flex;
-
     flex-direction: column;
 
     gap: 15px;
 }
 
-/* Botões */
+
+/* =========================
+   BOTÕES
+========================= */
 
 .caixa-alternativas button {
+    width: 100%;
+
+    padding: 17px 20px;
+
     background-color: transparent;
+
+    border: 2px solid var(--cor-destaque);
+    border-radius: 10px;
 
     color: var(--cor-texto);
 
-    border: 2px solid var(--cor-destaque);
-
-    border-radius: 10px;
-
-    padding: 16px 20px;
-
     font-size: 1rem;
-
-    cursor: pointer;
+    line-height: 1.5;
 
     text-align: left;
 
-    transition: all 0.25s ease;
-}
+    cursor: pointer;
 
-/* Efeito quando passa o mouse */
+    transition:
+        background-color 0.25s,
+        color 0.25s,
+        transform 0.2s,
+        box-shadow 0.25s;
+}
 
 .caixa-alternativas button:hover {
     background-color: var(--cor-destaque);
 
-    color: var(--cor-fundo);
+    color: var(--cor-preto);
 
     transform: translateY(-3px);
 
-    box-shadow: 0 5px 20px rgba(116, 161, 169, 0.25);
+    box-shadow:
+        0 8px 20px rgba(116, 161, 169, 0.25);
 }
-
-/* Efeito ao clicar */
 
 .caixa-alternativas button:active {
     transform: translateY(0);
-
-    box-shadow: none;
 }
 
-/* Resultado */
+
+/* =========================
+   RESULTADO
+========================= */
 
 .caixa-resultado {
     display: none;
 
     margin-top: 25px;
-
     padding: 25px;
 
     background-color: var(--cor-secundaria);
@@ -156,65 +177,49 @@ h1 {
 
     border-radius: 12px;
 
-    text-align: left;
-
     line-height: 1.6;
 }
 
-/* Título do resultado */
-
 .texto-resultado h2 {
-    color: var(--cor-destaque);
-
     margin-bottom: 15px;
+
+    color: var(--cor-destaque);
 
     text-align: center;
 }
 
-/* Subtítulo do resultado */
-
 .texto-resultado h3 {
-    color: var(--cor-hover);
+    margin-top: 25px;
+    margin-bottom: 15px;
 
-    margin-top: 20px;
-
-    margin-bottom: 10px;
+    color: var(--cor-destaque-hover);
 }
 
-/* Parágrafos do resultado */
-
 .texto-resultado p {
-    color: var(--cor-texto);
-
     margin-bottom: 12px;
 }
 
-/* Texto em destaque */
-
 .texto-resultado strong {
-    color: var(--cor-destaque);
+    color: var(--cor-destaque-hover);
 }
 
-/* Responsividade para celular */
+
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 600px) {
 
     body {
-        padding: 15px;
+        padding: 12px;
     }
 
     .caixa-principal {
-        width: 100%;
-
         padding: 25px 18px;
-
-        border-radius: 15px;
     }
 
     h1 {
         font-size: 1.7rem;
-
-        margin-bottom: 20px;
     }
 
     .caixa-perguntas {
@@ -224,7 +229,7 @@ h1 {
     }
 
     .caixa-alternativas button {
-        padding: 14px;
+        padding: 15px;
 
         font-size: 0.95rem;
     }
